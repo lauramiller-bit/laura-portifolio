@@ -1,14 +1,163 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Portiflio</title>
-    <link rel="stylesheet" href="style.css">
-   
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Laura Miller Bastos | Portfólio</title>
+  <meta name="description" content="Portfólio de Laura Miller Bastos, estudante de Desenvolvimento de Sistemas.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    <script src="script.js"></script>
+
+<header class="topo">
+  <a href="#inicio" class="logo">laura<span>.dev</span></a>
+  <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false">☰</button>
+  <nav id="menu">
+    <a href="#sobre">Sobre mim</a>
+    <a href="#habilidades">Habilidades</a>
+    <a href="#projetos">Projetos</a>
+    <a href="#jornada">Minha jornada</a>
+    <a href="#contato">Contato</a>
+  </nav>
+</header>
+
+<main>
+  <section id="inicio" class="hero">
+    <div class="hero-texto">
+      <p class="ola">Oi, eu sou a</p>
+      <h1>Laura Miller Bastos</h1>
+      <p class="frase">Estudante apaixonada por descobrir como a tecnologia funciona e por transformar ideias em código.</p>
+      <div class="botoes">
+        <a href="#projetos" class="btn btn-principal">Ver meus projetos</a>
+        <button class="btn btn-borda" id="surpresaBtn">Clique aqui</button>
+      </div>
+      <p class="surpresa" id="surpresaMsg" role="status" aria-live="polite"></p>
+    </div>
+
+    <div class="janela" aria-hidden="true">
+      <div class="janela-barra"><i></i><i></i><i></i><span>laura.js</span></div>
+      <pre><code><span class="c-k">const</span> laura = {
+  idade: <span class="c-n">15</span>,
+  curso: <span class="c-s">"Desenvolvimento de Sistemas"</span>,
+  aprendendo: [<span id="digitando" class="c-s"></span><span class="cursor">|</span>]
+};</code></pre>
+    </div>
+  </section>
+
+  <section id="sobre" class="secao">
+    <h2>Sobre mim</h2>
+    <div class="sobre-grid">
+      <p class="destaque">Tenho 15 anos e estou cursando Desenvolvimento de Sistemas.</p>
+      <div>
+        <p>Estou no começo da minha caminhada na programação e cada aula me mostra algo novo. Gosto de entender como as coisas funcionam por trás da tela e de ver meu código ganhar vida no navegador.</p>
+        <p class="objetivo"><strong>Meu objetivo profissional:</strong> encontrar uma profissão com a qual eu me identifique e que eu goste de fazer.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="habilidades" class="secao">
+    <h2>Habilidades</h2>
+    <p class="intro">As tecnologias que estudei durante o curso. Clique em um cartão para ver o que aprendi.</p>
+    <div class="habilidades">
+      <button class="skill skill-html" aria-expanded="false">
+        <span class="skill-tag">&lt;/&gt;</span>
+        <strong>HTML</strong>
+        <span class="skill-info">Estrutura das páginas: títulos, textos, imagens, links, listas e formulários.</span>
+      </button>
+      <button class="skill skill-css" aria-expanded="false">
+        <span class="skill-tag">{ }</span>
+        <strong>CSS</strong>
+        <span class="skill-info">Visual do site: cores, fontes, espaçamentos e layouts que se adaptam a cada tela.</span>
+      </button>
+      <button class="skill skill-js" aria-expanded="false">
+        <span class="skill-tag">( )</span>
+        <strong>JavaScript</strong>
+        <span class="skill-info">Interatividade: botões, mensagens e ações que respondem ao clique de quem usa.</span>
+      </button>
+    </div>
+  </section>
+
+  <section id="projetos" class="secao">
+    <h2>Projetos</h2>
+    <p class="intro">Atividades que desenvolvi durante as aulas.</p>
+
+    <div class="filtros" role="group" aria-label="Filtrar projetos">
+      <button class="filtro ativo" data-filtro="todos">Todos</button>
+      <button class="filtro" data-filtro="html">HTML</button>
+      <button class="filtro" data-filtro="css">CSS</button>
+      <button class="filtro" data-filtro="js">JavaScript</button>
+    </div>
+
+    <div class="cards">
+      <!-- Para cada projeto: troque o nome, a descrição e o link do GitHub -->
+      <article class="card" data-tec="html">
+        <span class="etiqueta html">HTML</span>
+        <h3>Página de apresentação</h3>
+        <p>Minha primeira página web, com títulos, textos, imagens e links organizados.</p>
+        <a class="btn btn-card" href="https://github.com/lauramiller-bit?tab=repositories" target="_blank" rel="noopener">Ver no GitHub</a>
+      </article>
+      <article class="card" data-tec="css">
+        <span class="etiqueta css">CSS</span>
+        <h3>Cartão de perfil estilizado</h3>
+        <p>Atividade para praticar cores, fontes, bordas e espaçamentos.</p>
+        <a class="btn btn-card" href="https://github.com/lauramiller-bit?tab=repositories" target="_blank" rel="noopener">Ver no GitHub</a>
+      </article>
+      <article class="card" data-tec="js">
+        <span class="etiqueta js">JavaScript</span>
+        <h3>Calculadora</h3>
+        <p>Uma calculadora simples para praticar variáveis, funções e eventos de clique.</p>
+        <a class="btn btn-card" href="https://github.com/lauramiller-bit?tab=repositories" target="_blank" rel="noopener">Ver no GitHub</a>
+      </article>
+      <article class="card" data-tec="js">
+        <span class="etiqueta js">JavaScript</span>
+        <h3>Lista de tarefas</h3>
+        <p>Permite adicionar e remover tarefas na tela, treinando manipulação da página.</p>
+        <a class="btn btn-card" href="https://github.com/lauramiller-bit?tab=repositories" target="_blank" rel="noopener">Ver no GitHub</a>
+      </article>
+    </div>
+  </section>
+
+  <section id="jornada" class="secao">
+    <h2>Minha jornada</h2>
+    <ol class="linha">
+      <li>
+        <h3>O começo</h3>
+        <p>Entrei no curso de Desenvolvimento de Sistemas cheia de curiosidade e conheci a lógica por trás dos programas.</p>
+      </li>
+      <li>
+        <h3>Construindo páginas</h3>
+        <p>Com HTML e CSS, aprendi a estruturar e deixar um site bonito e organizado.</p>
+      </li>
+      <li>
+        <h3>Dando vida ao código</h3>
+        <p>Com JavaScript, minhas páginas passaram a reagir a cliques e a mostrar mensagens.</p>
+      </li>
+      <li>
+        <h3>E agora?</h3>
+        <p>Continuo praticando, errando, corrigindo e aprendendo para descobrir a profissão que mais combina comigo.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section id="contato" class="secao contato">
+    <h2>Contato</h2>
+    <p class="intro">Quer ver como escrevo código? Meus repositórios estão no GitHub.</p>
+    <div class="botoes">
+      <a class="btn btn-principal" href="https://github.com/lauramiller-bit?tab=repositories" target="_blank" rel="noopener">Abrir meu GitHub</a>
+      <button class="btn btn-borda" id="copiarBtn" data-link="https://github.com/lauramiller-bit">Copiar link</button>
+    </div>
+    <p class="surpresa" id="copiarMsg" role="status" aria-live="polite"></p>
+  </section>
+</main>
+
+<footer class="rodape">
+  <p>© <span id="ano"></span> Laura Miller Bastos. Feito com HTML, CSS e JavaScript.</p>
+</footer>
+
+<button class="topo-btn" id="voltarTopo" aria-label="Voltar ao topo">↑</button>
+<script src="script.js"></script>
 </body>
 </html>

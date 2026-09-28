@@ -1,0 +1,127 @@
+:root{
+  --papel:#fbf8ff; --tinta:#1f1b3a; --suave:#5c587a; --linha:#e3dcf5;
+  --roxo:#6c4cf1; --rosa:#ff6fa5; --menta:#3ddbb0; --amarelo:#ffd35c;
+  --card:#ffffff; --raio:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{
+  font-family:'DM Sans',system-ui,sans-serif;color:var(--tinta);line-height:1.65;
+  background-color:var(--papel);
+  background-image:linear-gradient(var(--linha) 1px,transparent 1px),linear-gradient(90deg,var(--linha) 1px,transparent 1px);
+  background-size:32px 32px;
+}
+h1,h2,h3,.logo{font-family:'Bricolage Grotesque',sans-serif;line-height:1.1}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--roxo);outline-offset:3px}
+
+/* Topo */
+.topo{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;
+  padding:14px 6vw;background:rgba(251,248,255,.92);backdrop-filter:blur(8px);border-bottom:2px solid var(--tinta)}
+.logo{font-weight:800;font-size:1.4rem;text-decoration:none}
+.logo span{color:var(--roxo)}
+nav{display:flex;gap:22px}
+nav a{text-decoration:none;font-weight:500;padding:4px 0;border-bottom:3px solid transparent}
+nav a:hover{border-color:var(--rosa)}
+.menu-btn{display:none;background:none;border:2px solid var(--tinta);border-radius:10px;font-size:1.3rem;padding:2px 10px;cursor:pointer}
+
+/* Botões */
+.btn{display:inline-block;font:700 1rem 'DM Sans',sans-serif;text-decoration:none;cursor:pointer;
+  padding:12px 22px;border:2px solid var(--tinta);border-radius:999px;
+  box-shadow:4px 4px 0 var(--tinta);transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--tinta)}
+.btn-principal{background:var(--roxo);color:#fff}
+.btn-borda{background:var(--amarelo);color:var(--tinta)}
+.btn-card{background:var(--menta);color:var(--tinta);padding:9px 18px;font-size:.95rem}
+.botoes{display:flex;gap:16px;flex-wrap:wrap}
+
+/* Seções */
+.secao{max-width:1040px;margin:0 auto;padding:84px 6vw 20px}
+h2{font-size:clamp(2rem,5vw,3rem);font-weight:800;margin-bottom:14px;display:inline-block;
+  background:linear-gradient(transparent 62%,var(--amarelo) 62%)}
+.intro{color:var(--suave);margin-bottom:28px;max-width:60ch}
+
+/* Início */
+.hero{max-width:1040px;margin:0 auto;padding:72px 6vw 20px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.ola{font-weight:700;color:var(--roxo);font-size:1.1rem}
+h1{font-size:clamp(2.6rem,7vw,4.6rem);font-weight:800;margin:6px 0 18px}
+.frase{font-size:1.15rem;color:var(--suave);max-width:46ch;margin-bottom:28px}
+.surpresa{min-height:1.6em;margin-top:18px;font-weight:700;color:var(--roxo)}
+.janela{background:var(--tinta);color:#f3efff;border:2px solid var(--tinta);border-radius:var(--raio);
+  box-shadow:8px 8px 0 var(--rosa);overflow:hidden;transform:rotate(1.5deg)}
+.janela-barra{display:flex;align-items:center;gap:7px;padding:10px 14px;background:#2d2856}
+.janela-barra i{width:11px;height:11px;border-radius:50%;background:var(--rosa)}
+.janela-barra i:nth-child(2){background:var(--amarelo)}
+.janela-barra i:nth-child(3){background:var(--menta)}
+.janela-barra span{margin-left:auto;font-size:.8rem;opacity:.7}
+.janela pre{padding:22px;font:.92rem/1.7 ui-monospace,Consolas,monospace;overflow-x:auto;white-space:pre-wrap}
+.c-k{color:var(--rosa)} .c-s{color:var(--menta)} .c-n{color:var(--amarelo)}
+.cursor{animation:pisca 1s steps(1) infinite;color:#fff}
+@keyframes pisca{50%{opacity:0}}
+
+/* Sobre */
+.sobre-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:36px;align-items:start;margin-top:10px}
+.destaque{font:700 clamp(1.4rem,3vw,1.9rem)/1.25 'Bricolage Grotesque',sans-serif}
+.sobre-grid p+p{margin-top:14px}
+.objetivo{background:var(--card);border:2px solid var(--tinta);border-left:8px solid var(--rosa);padding:14px 18px;border-radius:12px}
+
+/* Habilidades */
+.habilidades{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.skill{display:flex;flex-direction:column;align-items:flex-start;gap:8px;text-align:left;cursor:pointer;
+  font:inherit;color:inherit;padding:24px;border:2px solid var(--tinta);border-radius:var(--raio);
+  box-shadow:5px 5px 0 var(--tinta);transition:transform .15s,box-shadow .15s}
+.skill:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--tinta)}
+.skill strong{font:800 1.6rem 'Bricolage Grotesque',sans-serif}
+.skill-tag{font:700 1.2rem ui-monospace,Consolas,monospace;background:var(--card);border:2px solid var(--tinta);border-radius:10px;padding:2px 10px}
+.skill-info{display:none;font-size:.97rem}
+.skill.aberto .skill-info{display:block}
+.skill-html{background:#ffd9bd} .skill-css{background:#cfe6ff} .skill-js{background:#fff0a8}
+
+/* Projetos */
+.filtros{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:26px}
+.filtro{font:500 .95rem 'DM Sans',sans-serif;padding:7px 16px;border:2px solid var(--tinta);border-radius:999px;background:var(--card);cursor:pointer}
+.filtro.ativo{background:var(--tinta);color:#fff}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:22px}
+.card{display:flex;flex-direction:column;align-items:flex-start;gap:10px;background:var(--card);
+  border:2px solid var(--tinta);border-radius:var(--raio);padding:22px;box-shadow:5px 5px 0 var(--roxo)}
+.card.oculto{display:none}
+.card h3{font-size:1.3rem}
+.card p{color:var(--suave);font-size:.97rem;flex:1}
+.etiqueta{font-size:.8rem;font-weight:700;padding:2px 12px;border-radius:999px;border:2px solid var(--tinta)}
+.etiqueta.html{background:#ffd9bd} .etiqueta.css{background:#cfe6ff} .etiqueta.js{background:#fff0a8}
+
+/* Jornada */
+.linha{list-style:none;margin-top:24px;border-left:4px dashed var(--roxo);padding-left:28px;display:grid;gap:26px}
+.linha li{position:relative}
+.linha li::before{content:"";position:absolute;left:-40px;top:6px;width:20px;height:20px;border-radius:50%;
+  background:var(--rosa);border:3px solid var(--tinta)}
+.linha h3{font-size:1.3rem;margin-bottom:4px}
+.linha p{color:var(--suave);max-width:60ch}
+
+/* Contato e rodapé */
+.contato{padding-bottom:70px}
+.rodape{text-align:center;padding:26px 6vw;background:var(--tinta);color:#d9d3f5;font-size:.9rem}
+.topo-btn{position:fixed;right:20px;bottom:20px;width:46px;height:46px;border-radius:50%;border:2px solid var(--tinta);
+  background:var(--amarelo);font-size:1.3rem;font-weight:700;cursor:pointer;box-shadow:3px 3px 0 var(--tinta);
+  opacity:0;pointer-events:none;transition:opacity .2s}
+.topo-btn.visivel{opacity:1;pointer-events:auto}
+
+/* Tablet e celular */
+@media(max-width:860px){
+  .hero,.sobre-grid{grid-template-columns:1fr}
+  .habilidades{grid-template-columns:1fr}
+  .janela{transform:none}
+}
+@media(max-width:700px){
+  .menu-btn{display:block}
+  nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;
+    background:var(--papel);border-bottom:2px solid var(--tinta)}
+  nav.aberto{display:flex}
+  nav a{padding:14px 6vw;border-bottom:1px solid var(--linha)}
+  .secao{padding-top:64px}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .cursor{animation:none}
+  .btn,.skill{transition:none}
+}
